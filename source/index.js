@@ -42,8 +42,20 @@ async function setup () {
 
     let command = list[name]
 
+    const commands = []
+
+    if (command.meta) {
+      commands.push(`${name} ${command.meta}`)
+    } else {
+      commands.push(name)
+    }
+
+    if (typeof command.alias === 'string') {
+      commands.push(command.alias)
+    }
+
     app.command({
-      command: command.meta ? `${name} ${command.meta}` : name,
+      command: commands,
       describe: chalk.yellow(command.describe),
       builder: command.builder,
       handler: (options) => {
