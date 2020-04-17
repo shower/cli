@@ -36,7 +36,7 @@ function loadPresentationFiles (files = defaultFiles) {
   const core = vfs.src([
     'shower.js'
   ], {
-    cwd: 'node_modules/@shower/core'
+    cwd: 'node_modules/@shower/core/dist'
   })
     .pipe(rename((path) => {
       path.dirname = 'shower/' + path.dirname
