@@ -34,7 +34,7 @@ function loadPresentationFiles (files = defaultFiles) {
     ))
 
   const core = vfs.src([
-    'shower.min.js'
+    'shower.js'
   ], {
     cwd: 'node_modules/@shower/core'
   })
