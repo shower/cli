@@ -42,7 +42,7 @@ function builder (yargs) {
 
 function messages ({ output }) {
   return {
-    start: 'Project preparation in progress',
+    start: 'Project bundling in progress',
     end: chalk`Project bundled in {bold ${output}} dir`
   }
 }
