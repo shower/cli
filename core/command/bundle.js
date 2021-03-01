@@ -28,8 +28,8 @@ function builder (yargs) {
       output: {
         alias: 'o',
         type: 'string',
-        default: 'prepared',
-        describe: 'In which folder will the prepared presentation be written'
+        default: 'bundled',
+        describe: 'In which folder will the bundled presentation be written'
       },
       files: {
         alias: 'f',
@@ -43,7 +43,7 @@ function builder (yargs) {
 function messages ({ output }) {
   return {
     start: 'Project preparation in progress',
-    end: chalk`Project prepared in {bold ${output}} dir`
+    end: chalk`Project bundled in {bold ${output}} dir`
   }
 }
 
