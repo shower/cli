@@ -10,24 +10,35 @@ const template = require('gulp-template')
 
 const { installDependencies } = require('../lib/npm')
 
-async function handler ({ cwd, directory: folderName = 'slides', yes: isDefault }) {
+async function handler ({
+  cwd,
+  directory: folderName = 'slides',
+  yes: isDefault,
+  force: isOverride = false,
+  theme: themeName = '',
+  ratio: aspectRatio = ''
+}) {
   // Let's check if such folder exists
   const directory = path.isAbsolute(folderName) ? folderName : path.join(cwd, folderName)
 
   if (fs.existsSync(directory)) {
-    const { isForce } = await inquirer.prompt({
-      name: 'isForce',
-      type: 'confirm',
-      default: false,
-      message: `The ${chalk.yellow(folderName)} dir already exists. Do you want to overwrite it?`
-    })
+    if (!isOverride) {
+      const { isForce } = await inquirer.prompt({
+        name: 'isForce',
+        type: 'confirm',
+        default: false,
+        message: `The ${chalk.yellow(folderName)} dir already exists. Do you want to overwrite it?`
+      })
 
-    if (isForce) {
-      await del([directory])
+      if (isForce) {
+        await del([directory])
+      } else {
+        process.stdout.write(chalk.red('\n Creating aborted\n'))
+
+        return
+      }
     } else {
-      process.stdout.write(chalk.red(`\n Creating aborted\n`))
-
-      return
+      await del([directory])
     }
   }
 
@@ -55,6 +66,11 @@ async function handler ({ cwd, directory: folderName = 'slides', yes: isDefault 
 
   if (isDefault) {
     Object.assign(options, defaultParams)
+  } else if (params[0].choices.includes(themeName) && params[1].choices.includes(aspectRatio)) {
+    Object.assign(options, {
+      theme: themeName,
+      ratio: aspectRatio
+    })
   } else {
     Object.assign(options, await inquirer.prompt(params))
   }
@@ -104,6 +120,20 @@ function builder (yargs) {
         alias: ['y'],
         default: false,
         type: 'boolean'
+      },
+      force: {
+        default: false,
+        type: 'boolean'
+      },
+      theme: {
+        alias: ['t'],
+        default: '',
+        type: 'string'
+      },
+      ratio: {
+        alias: ['r'],
+        default: '',
+        type: 'string'
       }
     })
     .positional('directory', {
