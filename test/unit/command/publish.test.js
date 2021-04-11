@@ -3,9 +3,9 @@
 const { expect } = require('chai')
 const { handler: publish, messages } = require('../../../core/command/publish')
 
-describe('publish command', () => {
-  describe('types matching', () => {
-    it('must be function', () => {
+describe('Publish command', () => {
+  describe('types', () => {
+    it('publish must be a function', () => {
       expect(typeof publish).to.be.eq('function')
     })
   })

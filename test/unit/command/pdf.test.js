@@ -3,9 +3,9 @@
 const { expect } = require('chai')
 const { handler: pdf, messages } = require('../../../core/command/pdf')
 
-describe('pdf command', () => {
-  describe('types matching', () => {
-    it('must be function', () => {
+describe('Pdf command', () => {
+  describe('types', () => {
+    it('pdf must be a function', () => {
       expect(typeof pdf).to.be.eq('function')
     })
   })

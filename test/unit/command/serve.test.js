@@ -3,9 +3,9 @@
 const { expect } = require('chai')
 const { handler: serve } = require('../../../core/command/serve')
 
-describe('serve command', () => {
-  describe('types matching', () => {
-    it('must be function', () => {
+describe('Serve command', () => {
+  describe('types', () => {
+    it('serve must be a function', () => {
       expect(typeof serve).to.be.eq('function')
     })
   })

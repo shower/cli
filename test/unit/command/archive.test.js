@@ -3,9 +3,9 @@
 const { expect } = require('chai')
 const { handler: archive, messages } = require('../../../core/command/archive')
 
-describe('archive command', () => {
-  describe('types matching', () => {
-    it('must be function', () => {
+describe('Archive command', () => {
+  describe('types', () => {
+    it('archive must be a function', () => {
       expect(typeof archive).to.be.eq('function')
     })
   })

@@ -3,9 +3,9 @@
 const { expect } = require('chai')
 const { handler: create, messages } = require('../../../core/command/create')
 
-describe('create command', () => {
-  describe('types matching', () => {
-    it('must be function', () => {
+describe('Create command', () => {
+  describe('types', () => {
+    it('create must be a function', () => {
       expect(typeof create).to.be.eq('function')
     })
   })
