@@ -1,12 +1,12 @@
 'use strict'
 
-const assert = require('assert')
+const { expect } = require('chai')
 const { handler: serve } = require('../../core/command/serve')
 
 describe('Serve command', () => {
   describe('Types matching', () => {
     it('Must be function', () => {
-      assert.strictEqual(typeof serve, 'function')
+      expect(typeof serve).to.be.eq('function')
     })
   })
 })

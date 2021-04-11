@@ -1,20 +1,20 @@
 'use strict'
 
-const assert = require('assert')
+const { expect } = require('chai')
 const { handler: archive, messages } = require('../../core/command/archive')
 
 describe('Serve command', () => {
   describe('Types matching', () => {
     it('Must be function', () => {
-      assert.strictEqual(typeof archive, 'function')
+      expect(typeof archive).to.be.eq('function')
     })
   })
   describe('Interface', () => {
     it('Messages must provided "start" and "end" messages', () => {
       const { start, end } = messages({ output: '' })
 
-      assert.strictEqual(typeof start, 'string')
-      assert.strictEqual(typeof end, 'string')
+      expect(typeof start).to.be.eq('string')
+      expect(typeof end).to.be.eq('string')
     })
   })
 })
