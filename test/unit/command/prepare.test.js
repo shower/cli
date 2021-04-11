@@ -1,12 +1,12 @@
 'use strict'
 
 const { expect } = require('chai')
-const { handler: archive, messages } = require('../../core/command/archive')
+const { handler: prepare, messages } = require('../../../core/command/prepare')
 
 describe('Serve command', () => {
   describe('Types matching', () => {
     it('Must be function', () => {
-      expect(typeof archive).to.be.eq('function')
+      expect(typeof prepare).to.be.eq('function')
     })
   })
   describe('Interface', () => {

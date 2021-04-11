@@ -79,9 +79,9 @@
     "lint-staged": "lint-staged",
     "spellcheck": "yaspeller-ci *.md",
     "lint": "eslint-ci **/*.js --fix",
-    "test": "mocha test/** && npm run lint && npm run spellcheck",
-    "test:unit": "mocha test/unit",
-    "test:func": "mocha test/func",
-    "test:coverage": "nyc mocha test/unit"
+    "test": "mocha test/**/** && npm run lint && npm run spellcheck",
+    "test:unit": "mocha test/unit/**",
+    "test:func": "mocha test/func/**",
+    "test:coverage": "nyc mocha test/**/**"
   }
 }

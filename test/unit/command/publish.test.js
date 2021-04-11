@@ -1,7 +1,7 @@
 'use strict'
 
 const { expect } = require('chai')
-const { handler: publish, messages } = require('../../core/command/publish')
+const { handler: publish, messages } = require('../../../core/command/publish')
 
 describe('Serve command', () => {
   describe('Types matching', () => {
