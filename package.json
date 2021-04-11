@@ -30,6 +30,7 @@
     "shower": "bin/cli.js"
   },
   "devDependencies": {
+    "chai": "^4.3.4",
     "eslint": "^6.8.0",
     "eslint-ci": "^1.0.0",
     "eslint-config-standard": "^14.1.1",
@@ -37,8 +38,8 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.3.1",
     "eslint-plugin-standard": "^4.1.0",
-    "jest": "^25.5.4",
     "lint-staged": "^10.5.4",
+    "mocha": "^8.3.2",
     "pdf-parse": "^1.1.1",
     "pre-commit": "^1.2.2",
     "yaspeller-ci": "^1.0.2"
@@ -77,6 +78,6 @@
     "lint-staged": "lint-staged",
     "spellcheck": "yaspeller-ci *.md",
     "lint": "eslint-ci **/*.js --fix",
-    "test": "jest && npm run lint && npm run spellcheck"
+    "test": "mocha test/unit && npm run lint && npm run spellcheck"
   }
 }
