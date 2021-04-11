@@ -3,14 +3,14 @@
 const { expect } = require('chai')
 const { handler: pdf, messages } = require('../../../core/command/pdf')
 
-describe('Serve command', () => {
-  describe('Types matching', () => {
-    it('Must be function', () => {
+describe('pdf command', () => {
+  describe('types matching', () => {
+    it('must be function', () => {
       expect(typeof pdf).to.be.eq('function')
     })
   })
-  describe('Interface', () => {
-    it('Messages must provided "start" and "end" messages', () => {
+  describe('interface', () => {
+    it('messages must provided "start" and "end" messages', () => {
       const { start, end } = messages({ file: '' })
 
       expect(typeof start).to.be.eq('string')
