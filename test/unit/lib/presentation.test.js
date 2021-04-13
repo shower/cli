@@ -1,9 +1,9 @@
 'use strict'
 
-const chaiStream = require('chai-stream')
 const path = require('path')
 
 const chai = require('chai')
+const chaiStream = require('chai-stream')
 
 const expect = chai.expect
 chai.use(chaiStream)
