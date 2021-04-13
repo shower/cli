@@ -19,6 +19,7 @@ const cmdArgs = [
   },
   {
     name: 'force',
+    alias: ['f'],
     default: false,
     type: 'boolean'
   },
