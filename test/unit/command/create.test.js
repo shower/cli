@@ -34,6 +34,7 @@ describe('Create command', () => {
         type: 'boolean'
       },
       force: {
+        alias: ['f'],
         default: false,
         type: 'boolean'
       },
