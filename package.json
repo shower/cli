@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "chai": "^4.3.4",
+    "chai-stream": "0.0.0",
     "eslint": "^6.8.0",
     "eslint-ci": "^1.0.0",
     "eslint-config-standard": "^14.1.1",
@@ -40,6 +41,7 @@
     "eslint-plugin-standard": "^4.1.0",
     "lint-staged": "^10.5.4",
     "mocha": "^8.3.2",
+    "mock-fs": "^4.13.0",
     "nyc": "^15.1.0",
     "pdf-parse": "^1.1.1",
     "pre-commit": "^1.2.2",
