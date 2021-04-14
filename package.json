@@ -30,6 +30,7 @@
     "shower": "bin/cli.js"
   },
   "devDependencies": {
+    "@jsdevtools/chai-exec": "^2.1.1",
     "chai": "^4.3.4",
     "chai-stream": "0.0.0",
     "eslint": "^6.8.0",
@@ -83,9 +84,9 @@
     "lint-staged": "lint-staged",
     "spellcheck": "yaspeller-ci *.md",
     "lint": "eslint-ci **/*.js --fix",
-    "test": "mocha test/**/** && npm run lint && npm run spellcheck",
+    "test": "npm run test:unit && npm run test:func && npm run lint && npm run spellcheck",
     "test:unit": "mocha test/unit/**",
-    "test:func": "mocha test/func/**",
+    "test:func": "mocha --timeout 50000 test/func/**",
     "test:coverage": "nyc mocha test/**/**"
   }
 }
